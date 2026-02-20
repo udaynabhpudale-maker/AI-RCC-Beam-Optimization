@@ -16,7 +16,9 @@ st.title("AI Based RCC Beam Optimization")
 # -------------------------------
 # LOAD DATASET
 # -------------------------------
-df = pd.read_excel("data.xlsx")
+import os
+DATA_PATH = os.path.join(os.getcwd(), "data.xlsx")
+df = pd.read_excel(DATA_PATH)
 
 # -------------------------------
 # CONSTANTS (DATASET RULES)
@@ -151,3 +153,4 @@ if st.button("Optimize Beam"):
         st.write(f"*Percentage AST Optimised (%):* {pct_ast}")
 
         st.caption("All values strictly as per dataset & safer-side design rules")
+
